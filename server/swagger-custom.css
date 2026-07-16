@@ -1,0 +1,37 @@
+/* Simplify Swagger UI responses view
+   Hide media type selector, "Controls Accept header", "Example Value" and "Schema"
+   Show only HTTP status codes and the description text.
+*/
+
+/* hide the media type selector / MIME dropdown */
+.swagger-ui .responses .response .mime-type,
+.swagger-ui .responses .response .mimes,
+.swagger-ui .opblock .opblock-body .response-col_description .mime-type {
+  display: none !important;
+}
+
+/* hide the Example Value and Schema panels */
+.swagger-ui .opblock .opblock-body .examples-wrapper,
+.swagger-ui .opblock .opblock-body .schema-wrapper,
+.swagger-ui .opblock .opblock-body .model-box,
+.swagger-ui .opblock .opblock-body .example,
+.swagger-ui .model-box {
+  display: none !important;
+}
+
+/* remove the small "Controls" text and accept header */
+.swagger-ui .opblock .opblock-body .responses .response .response-controls,
+.swagger-ui .opblock .opblock-body .responses .response .response-controls * {
+  display: none !important;
+}
+
+/* keep the response status and description visible */
+.swagger-ui .responses-table td:nth-child(1),
+.swagger-ui .responses-table td:nth-child(2) {
+  display: table-cell !important;
+}
+
+/* make the example JSON readable if present */
+.swagger-ui .opblock .opblock-body .response .response-col_description pre {
+  max-height: none !important;
+}
